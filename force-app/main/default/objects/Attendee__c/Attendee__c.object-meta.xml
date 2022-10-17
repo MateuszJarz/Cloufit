@@ -149,17 +149,17 @@
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>false</enableReports>
-    <enableSearch>true</enableSearch>
+    <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
-    <label>Event</label>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Attendee</label>
     <nameField>
-        <label>Event Name</label>
+        <label>Attendee Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Events</pluralLabel>
+    <pluralLabel>Attendees</pluralLabel>
     <searchLayouts></searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
+    <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
