@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_Virtual_is_Selected</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(TEXT(Event_Type__c) == &apos;Virtual&apos;,
+	 NOT(ISBLANK(Location__c )),
+				false)</errorConditionFormula>
+    <errorMessage>If Virtual is Selected as Value for Event Type field then Prevent User to Select Location on Event Record.</errorMessage>
+</ValidationRule>
