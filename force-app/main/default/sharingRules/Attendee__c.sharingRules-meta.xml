@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Attendee_Object_Sharing_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Attendee Object Sharing Rule</label>
+        <sharedTo>
+            <role>Attendee</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Attendee</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

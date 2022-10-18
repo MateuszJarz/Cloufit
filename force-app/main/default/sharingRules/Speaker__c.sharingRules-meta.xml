@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Speaker_Object_Sharing_Rule</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Create a Sharing Rule which will share the Speaker records with the Role Organizer.
+The permission should be Read/Edit.</description>
+        <label>Speaker Object Sharing Rule</label>
+        <sharedTo>
+            <role>Speaker</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Speaker</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>
