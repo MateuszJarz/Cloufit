@@ -20,20 +20,16 @@ trigger EventSpeakerRejectDuplicate on Event_Speaker__c (before insert, before u
         
     }
     // Query for Speaker Name
-       List<Speaker__c> triggerSpeaker =
-        new List<Speaker__c>([
-            SELECT Id, Name
-            FROM Speaker__c 
-            WHERE Id IN : triggerSpeakerId]);
+       Speaker__c triggerSpeaker =
+        [ SELECT Id, Name
+          FROM Speaker__c 
+          WHERE Id = : triggerSpeakerId];
     
     
     for(Event_Speaker__c eventSpeaker : eventSpeakersList){
-         System.debug('z listy' + eventSpeaker.Speaker__r.Name);
+         //System.debug('z listy' + eventSpeaker.Speaker__r.Name);
          
-         for(Speaker__c trspk : triggerSpeaker){
-    		System.debug( 'name of trigger speaker :' + trspk.Name);   
-             System.debug( 'name of trigger speaker :' + trspk.Id);    
-             if(eventSpeaker.Speaker__r.Name == trspk.Name ){
+         if(eventSpeaker.Speaker__r.Name == triggerSpeaker.Name ){
              
                  for(Event_Speaker__c ev : Trigger.new){
        				ev.addError('Cannot insert duplicate error.');              
@@ -41,7 +37,7 @@ trigger EventSpeakerRejectDuplicate on Event_Speaker__c (before insert, before u
        
 
             }
-    	}
+    	
        
      }
     
