@@ -1,0 +1,53 @@
+<template>
+  <lightning-card>
+    <lightning-tabset>
+      <lightning-tab label="Event Details">
+
+
+
+        <lightning-record-view-form record-id={recordId} object-api-name={objectApiName}>
+
+          <lightning-output-field field-name="Name"></lightning-output-field>
+          <lightning-output-field field-name="Event_Organizer__c"></lightning-output-field>
+          <lightning-output-field field-name="Start_DateTime__c"></lightning-output-field>
+          <lightning-output-field field-name="End_DateTime__c"></lightning-output-field>
+          <lightning-output-field field-name="Live__c"></lightning-output-field>
+          <lightning-output-field field-name="Location__c"></lightning-output-field>
+          <lightning-output-field field-name="People_Attending__c"></lightning-output-field>
+
+        </lightning-record-view-form>
+
+      </lightning-tab>
+      <lightning-tab label="Event Speaker">
+        <lightning-card title="Speaker" icon-name="standard:event">
+          <lightning-datatable key-field="id" data={event_speaker.data} columns={eventSpeakerColumns}>
+          </lightning-datatable>
+        </lightning-card>
+
+      </lightning-tab>
+      <lightning-tab label="Event Location">
+
+        <lightning-card title="Location" icon-name="standard:location">
+
+          <template if:true={location_details.data}>
+            <div class="slds-m-around_medium">
+              <p>{City__c},{Land_Mark__c}</p>
+              <p>{Postal_Code__c}</p>
+              <p>{Street__c}</p>
+              <p>{State__c},{Country__c}</p>
+            </div>
+          </template>
+
+        </lightning-card>
+      </lightning-tab>
+
+      <lightning-tab label="Event Attendees">
+
+      </lightning-tab>
+      <lightning-card title="Attendees" icon-name="standard:activity">
+        <lightning-datatable key-field="id" data={atteendee_speaker.data} columns={eventAtteendeesColumns}>
+        </lightning-datatable>
+      </lightning-card>
+    </lightning-tabset>
+  </lightning-card>
+</template>
