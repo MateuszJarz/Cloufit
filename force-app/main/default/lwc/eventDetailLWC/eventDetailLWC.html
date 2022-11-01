@@ -42,12 +42,11 @@
       </lightning-tab>
 
       <lightning-tab label="Event Attendees">
-
+        <lightning-card title="Attendees" icon-name="standard:activity">
+          <lightning-datatable key-field="id" data={atteendee_speaker.data} columns={eventAtteendeesColumns}>
+          </lightning-datatable>
+        </lightning-card>
       </lightning-tab>
-      <lightning-card title="Attendees" icon-name="standard:activity">
-        <lightning-datatable key-field="id" data={atteendee_speaker.data} columns={eventAtteendeesColumns}>
-        </lightning-datatable>
-      </lightning-card>
     </lightning-tabset>
   </lightning-card>
 </template>
