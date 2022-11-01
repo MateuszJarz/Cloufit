@@ -1,0 +1,37 @@
+<template>
+
+	<lightning-card>
+
+		<div>
+			<lightning-input onchange={handleChangeFields} type="text" label="Name"> </lightning-input>
+
+
+			<lightning-record-edit-form object-api-name={childObjectApiName}>
+				<label for="fieldid">{fieldLabel}</label>
+				<lightning-input-field id="fieldid" required={required} variant="label-hidden"
+					field-name={targetFieldApiName} value={value} onchange={handleChange} disabled={disabled}>
+				</lightning-input-field>
+			</lightning-record-edit-form>
+
+
+			<lightning-input onchange={handleChangeFields} type="datetime" label="Start Date"> </lightning-input>
+			<lightning-input onchange={handleChangeFields} type="datetime" label="End Date"> </lightning-input>
+			<lightning-input onchange={handleChangeFields} type='number' label="Max Attendees"> </lightning-input>
+
+			<lightning-input-rich-text value={text}></lightning-input-rich-text>
+
+			<lightning-button label="Cancel" title="Non-primary action" onclick={handleNavigate}>
+			</lightning-button>
+
+			<lightning-button variant="brand" label="Add Event" title="Primary action" onclick={createEvent}>
+			</lightning-button>
+
+
+
+
+		</div>
+
+
+
+	</lightning-card>
+</template>
