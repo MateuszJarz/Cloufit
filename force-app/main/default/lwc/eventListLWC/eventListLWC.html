@@ -1,0 +1,21 @@
+<template>
+
+    <lightning-card>
+        
+    <lightning-input type="search" label="Search Event" onchange={handleSearch}></lightning-input>
+            
+   <lightning-input onchange={handleSearch} type="datetime" label="Start Date"> </lightning-input>
+
+   <lightning-input type="search" label="Search Location" onchange={handleSearch}></lightning-input>
+
+
+
+        <!--DATA TABLE-->
+    <lightning-card title="Event" icon-name="standard:event">
+    <lightning-datatable key-field="id" data={data} columns={columns} onrowaction={handleRowAction}>
+    </lightning-datatable>
+  </lightning-card>
+    </lightning-card>
+
+   
+</template>
