@@ -1,0 +1,25 @@
+<template>
+ 
+   
+    <lightning-accordion active-section-name="A">
+      <lightning-accordion-section name="A" label="Upcoming Events">
+        <lightning-card >
+          <lightning-datatable key-field="id" data={eventUpComming.data} columns={columns}>
+          </lightning-datatable>
+        </lightning-card>
+      </lightning-accordion-section>
+    
+      <lightning-accordion-section name="B" label="Past Events">
+        <lightning-card >
+          <lightning-datatable key-field="id" data={eventUpRelated.data} columns={columns}>
+          </lightning-datatable>
+        </lightning-card>
+      </lightning-accordion-section>
+    
+    </lightning-accordion>
+
+   
+
+
+   
+</template>
