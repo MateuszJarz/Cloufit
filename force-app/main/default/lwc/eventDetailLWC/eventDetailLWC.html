@@ -19,7 +19,14 @@
 
       </lightning-tab>
       <lightning-tab label="Event Speaker">
+
+   
+
         <lightning-card title="Speaker" icon-name="standard:event">
+
+          <lightning-button variant="brand" label="Create Speaker" title="Primary action" onclick={handleNewSpeaker}>
+          </lightning-button>
+
           <lightning-datatable key-field="id" data={event_speaker.data} columns={eventSpeakerColumns}>
           </lightning-datatable>
         </lightning-card>
@@ -42,6 +49,11 @@
       </lightning-tab>
 
       <lightning-tab label="Event Attendees">
+
+        
+        <lightning-button variant="brand" label="Create Attendee" title="Primary action" onclick={handleNewAttendee}>
+        </lightning-button>
+
         <lightning-card title="Attendees" icon-name="standard:activity">
           <lightning-datatable key-field="id" data={atteendee_speaker.data} columns={eventAtteendeesColumns}>
           </lightning-datatable>

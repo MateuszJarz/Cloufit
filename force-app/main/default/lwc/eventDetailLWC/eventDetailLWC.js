@@ -18,6 +18,10 @@ import getEventSpeakerById from '@salesforce/apex/EventSpeakerController.getEven
 import getLocationDetails from '@salesforce/apex/EventSpeakerController.getLocationDetails';
 import getAttendeesDetails from '@salesforce/apex/EventSpeakerController.getAttendeesDetails';
 
+import { NavigationMixin } from 'lightning/navigation';
+import { encodeDefaultFieldValues } from 'lightning/pageReferenceUtils';
+
+
 
 
 const FIELDS = [
@@ -30,7 +34,7 @@ const FIELDS = [
     'Location__c.Verifed__c',
 ];
 
-export default class EventDetailLWC extends LightningElement {
+export default class EventDetailLWC extends NavigationMixin(LightningElement) {
 
     @api objectApiName = EVENT_C_OBJECT;
     //@api propertyValue ;
@@ -86,8 +90,48 @@ export default class EventDetailLWC extends LightningElement {
     get Verifed__c() {
         return this.location_details.data[0].Verifed__c;
     }
-      
 
+
+    //18 Add New Speaker Button a)
+    handleNewSpeaker(){
+       
+
+             var defaultValues = encodeDefaultFieldValues({
+            Event__c: this.recordId
+            });
+         this[NavigationMixin.Navigate]({
+            type: 'standard__objectPage',
+            attributes: {
+            objectApiName: 'Event_Speaker__c',
+            actionName: 'new'
+            },
+            state: {
+            defaultFieldValues: defaultValues
+            }
+            });
+             
+         
+    }
+
+    handleNewAttendee(){
+    
+        var defaultValues = encodeDefaultFieldValues({
+       Event__c: this.recordId
+       });
+    this[NavigationMixin.Navigate]({
+       type: 'standard__objectPage',
+       attributes: {
+       objectApiName: 'Event_Attendee__c',
+       actionName: 'new'
+       },
+       state: {
+       defaultFieldValues: defaultValues
+       }
+       });
+        
+    
+}
+     
 
 }
    
