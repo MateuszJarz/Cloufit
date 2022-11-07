@@ -1,0 +1,46 @@
+<template>
+    
+    <lightning-card>
+         <!--
+             <p><lightning-formatted-text  value={speakerName}></lightning-formatted-text></p>
+        <p><lightning-formatted-email value={speakerEmail} ></lightning-formatted-email></p>
+        <p> <lightning-formatted-url value={speakerUrl} tooltip="Omit leading slash" target="_blank"></lightning-formatted-url></p>
+        <p><lightning-formatted-phone value={speakerPhone} ></lightning-formatted-phone></p>
+         -->
+       
+    
+    
+ 
+    </lightning-card>
+
+    <lightning-card>
+
+        <lightning-record-view-form record-id={recordId} object-api-name={objectApiName}>
+            
+            <lightning-output-field field-name="Name"></lightning-output-field>
+          <lightning-output-field field-name="Email__c"></lightning-output-field>
+          <lightning-output-field field-name="Profile_URL__c"></lightning-output-field>
+    
+          </lightning-record-view-form>
+
+    </lightning-card>
+    
+ 
+
+    
+      <!--
+        <lightning-card>
+
+    <lightning-record-view-form record-id={recordId} object-api-name={objectApiName}>
+
+        <p><lightning-formatted-text  field-name="Name" ></lightning-formatted-text></p>
+        <p><lightning-formatted-email field-name="Email__c" ></lightning-formatted-email></p>
+        <p> <lightning-formatted-url field-name="Profile_URL__c" tooltip="Omit leading slash" target="_blank"></lightning-formatted-url></p>
+        <p><lightning-formatted-phone field-name="Phone__c" ></lightning-formatted-phone></p>
+        
+
+      </lightning-record-view-form>
+      </lightning-card>
+      -->
+
+</template>
